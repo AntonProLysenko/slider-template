@@ -6,13 +6,17 @@
   width: 50vw;
   max-width: 50vw;
 
-  position: relative;
+  /* position: relative; */
 
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
 
   scroll-snap-type: x mandatory;
+}
+.slider-container{
+    width:50vw;
+    position: relative;
 }
 
 .slider__slide {

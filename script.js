@@ -1,20 +1,53 @@
-const leftArrow = document.querySelector(".left-arrow")
-const rightArrow = document.querySelector(".right-arrow")
-const slider = document.querySelector(".slider");
+"use strict";
+const leftArrow = document.querySelector(".left-arrow"),
+  rightArrow = document.querySelector(".right-arrow"),
+  slider = document.querySelector(".slider");
+
+/**
+ * @brief Scroll to the right
+ */
+function scrollRight() {
+  if (slider.scrollWidth - slider.clientWidth === slider.scrollLeft) {
+    slider.scrollTo({
+      left: 0,
+      behavior: "smooth",
+    });
+  } else {
+    slider.scrollBy({
+      left: slider.clientWidth,
+      behavior: "smooth",
+    });
+  }
+}
 
 
+function scrollLeft() {
+  slider.scrollBy({
+    left: -slider.clientWidth,
+    behavior: "smooth",
+  });
+}
+
+// Auto slider
+// let timerId = setInterval(scrollRight, 7000);
 
 
-// function scrollRight() {
-//   if (slider.scrollWidth - slider.clientWidth === slider.scrollLeft) {
-//     slider.scrollTo({
-//       left: 0,
-//       behavior: "smooth",
-//     });
-//   } else {
-//     slider.scrollBy({
-//       left: window.innerWidth,
-//       behavior: "smooth",
-//     });
-//   }
-// }
+function resetTimer() {
+  clearInterval(timerId);
+  timerId = setInterval(scrollRight, 7000);
+}
+
+// Scroll Events
+slider.addEventListener("click", function (ev) {
+  if (ev.target === leftArrow) {
+    scrollLeft();
+    // resetTimer();
+  }
+});
+
+slider.addEventListener("click", function (ev) {
+  if (ev.target === rightArrow) {
+    scrollRight();
+    // resetTimer();
+  }
+});
