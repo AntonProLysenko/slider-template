@@ -3,11 +3,9 @@ const leftArrow = document.querySelector(".left-arrow"),
   rightArrow = document.querySelector(".right-arrow"),
   slider = document.querySelector(".slider");
 
-/**
- * @brief Scroll to the right
- */
+
 function scrollRight() {
-  if (slider.scrollWidth - slider.clientWidth === slider.scrollLeft) {
+  if (slider.scrollWidth - slider.clientWidth <= slider.scrollLeft) {
     slider.scrollTo({
       left: 0,
       behavior: "smooth",
