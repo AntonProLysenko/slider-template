@@ -20,7 +20,7 @@
 }
 
 .slider__slide {
-  height: 100vh;
+  height: 30vh;
   min-width: 50vw;
   width: 100%;
   font-size: 4rem;
@@ -60,7 +60,7 @@
   transform: translateY(-50%);
   width: 30px;
   height: 35px;
-    background-color: black;
+    /* background-color: black; */
   z-index: 2;
   cursor: pointer;
 }

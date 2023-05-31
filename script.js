@@ -1,4 +1,4 @@
-"use strict";
+
 const leftArrow = document.querySelector(".left-arrow"),
   rightArrow = document.querySelector(".right-arrow"),
   slider = document.querySelector(".slider");
